@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import SearchBox from './components/SearchBox'
-import ContactForm from './components/ContactForm'
-import ContactList from './components/ContactList'
+import ContactForm from './components/ContactForm/ContactForm'
+import ContactList from './components/ContackList/ContactList'
 
 
 const defaultContacts =
@@ -13,12 +13,21 @@ const defaultContacts =
               {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
             ]
   
-
-
 function App() {
-  const [contacts, setContacts] = useState(defaultContacts);
   const [filter, setFilter] = useState('');
+  const [contacts, setContacts] = useState(() =>{
+    const savedContact = localStorage.getItem("saved-contact")
+    if(savedContact !== null){
+      return JSON.parse(savedContact)
+    }
+    return defaultContacts;
+  }
+    );
+  
 
+  useEffect(() => {
+    localStorage.setItem("saved-contact", JSON.stringify(contacts))
+  },  [contacts])
 
   const addContact = (newContact) => {
     setContacts((prevContacts) => {
@@ -27,7 +36,6 @@ function App() {
   };
 
   const deleteContact = (taskId) => {
-    /*console.log(taskId)*/
     setContacts((prevContacts) => {
       return prevContacts.filter((contact) => contact.id !== taskId);
     });

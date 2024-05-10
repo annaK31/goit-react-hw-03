@@ -1,4 +1,5 @@
 
+
 const Contact = ({data: {number, name, id}, onDelete}) =>{
     return(
         <div >
