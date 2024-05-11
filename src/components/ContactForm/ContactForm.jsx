@@ -9,7 +9,7 @@ const ContactForm = ({onAdd}) =>{
     const numberFieldId = nanoid();
      const initialValues ={
     name: "",
-    phone: "",
+    number: "",
 }  
     const handleSubmit = (values, actions) => {
       onAdd({ ...values,  id: nanoid() })
@@ -19,20 +19,20 @@ const ContactForm = ({onAdd}) =>{
 
     const FeedbackSchema = Yup.object().shape({
         name: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
-        phone: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
+        number: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
       });
     return(
         <Formik initialValues={initialValues }
                 onSubmit={handleSubmit}  
                 validationSchema={FeedbackSchema}  >
         <Form className={css.form}>
-         <label htmlFor={`${nameFieldId}-name`}>Name</label>
-            <Field type="text" name="name" id={`${nameFieldId}-name`}/>
-            <ErrorMessage name="name" component="span" />
-         <label htmlFor={`${numberFieldId}-phone`}>Number</label>
-   <Field type="tel" name="phone" id={`${numberFieldId}-phone`}/>
-            <ErrorMessage name="phone" component="span" />
-            <button type="submit">Add contact</button>
+         <label className={css.label} htmlFor={`${nameFieldId}-name`}>Name</label>
+            <Field className={css.input}    type="text" name="name" id={`${nameFieldId}-name`}/>
+            <ErrorMessage  className={css.message}  name="name" component="span" />
+         <label  className={css.label}  htmlFor={`${numberFieldId}-number`}>Number</label>
+   <Field  className={css.input}  type="tel" name="number" id={`${numberFieldId}-number`}/>
+            <ErrorMessage  className={css.message} name="number" component="span" />
+            <button  className={css.btn} type="submit">Add contact</button>
         </Form>
         </Formik>
     )

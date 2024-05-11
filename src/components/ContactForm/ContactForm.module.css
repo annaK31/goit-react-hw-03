@@ -1,8 +1,43 @@
 .form{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
     max-width: 400px;
     padding: 8px;
     border: 1px solid black;
+}
+.label{
+    font-size: 20px;
+}
+.input{
+    max-width: 100%;
+    padding: 5px;
+    font-family: inherit;
+    font-size: medium;
+    outline: none;
+    border: 2px solid gray;
+}
+.message{
+    color: red;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+.input:focus {
+    border: 2px solid #39c; 
+}
+.btn{
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-color: black;
+    background-color: #d4d5dd;
+
+}
+.btn:active{
+    outline: none;
+    background-color: #8d8f94;
+}
+.btn:focus,
+.btn:hover{
+    border-color: black;
 }

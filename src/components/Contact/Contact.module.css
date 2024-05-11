@@ -1,0 +1,28 @@
+.contact{
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+.btn{
+    margin-top: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-color: black;
+    background-color: #d4d5dd;
+    margin-top: 0px; 
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    font-size: 15px;
+    padding: 8px;
+}
+.box{
+    position: relative;
+}
+.btn:active{
+    outline: none;
+    background-color: #8d8f94;
+}
+.btn:focus,
+.btn:hover{
+    border-color: black;
+}

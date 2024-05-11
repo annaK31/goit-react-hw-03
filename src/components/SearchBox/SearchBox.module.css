@@ -1,0 +1,13 @@
+.text{
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.input_search{
+    width: 400px;
+    padding: 5px;
+    font-family: inherit;
+    font-size: medium;
+    outline: none;
+    border: 2px solid gray;
+}
+

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import SearchBox from './components/SearchBox'
+import SearchBox from './components/SearchBox/SearchBox'
 import ContactForm from './components/ContactForm/ContactForm'
 import ContactList from './components/ContackList/ContactList'
 

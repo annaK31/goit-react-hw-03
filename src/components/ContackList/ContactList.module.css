@@ -1,11 +1,15 @@
 .list{
     display: flex;
+   flex-wrap: wrap;
     list-style-type: none;
     gap: 8px;
+    padding: 0px;
+    width: 100%;
 }
 
 .item{
     border: 1px solid;
-    max-width: 100x;
+    border-radius: 4px;
     padding: 5px;
+    width: 200px;
 }
